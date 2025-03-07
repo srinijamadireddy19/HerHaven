@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "6ef1",
+      "fullName": "mamatha",
+      "username": "mamatha",
+      "email": "mamatha@gmailcom",
+      "password": "123",
+      "confirmPassword": "123",
+      "profilePicture": null,
+      "bio": "",
+      "location": "",
+      "dob": "",
+      "interests": [
+        "Career Development"
+      ],
+      "role": "",
+      "phoneNumber": "",
+      "agreeTerms": true
+    }
+  ]
+}

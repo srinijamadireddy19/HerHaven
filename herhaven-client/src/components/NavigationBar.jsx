@@ -7,7 +7,7 @@ function NavigationBar() {
         <ul className='nav-options'>
             <li> <NavLink to="/">Home</NavLink> </li>
             <li><NavLink to="/Forum">Forum</NavLink></li>
-            <li>Login</li>
+            <li><NavLink to="/login">Login</NavLink></li>
             <li><NavLink to="/signup">SignUp</NavLink></li>
         </ul>
     </div>
