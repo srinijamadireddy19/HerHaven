@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuth } from "../context/AuthContext";
+
 
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
 
@@ -11,25 +15,33 @@ const Login = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/users");
-      const users = await response.json();
-
-      const user = users.find(
-        (user) => user.username === credentials.username && user.password === credentials.password
+      const userResponse = await axios.get(
+        `http://localhost:5000/users?username=${credentials.username}`
       );
+      const user = userResponse.data[0];
 
-      if (user) {
-        console.log("Login successful!");
-        navigate("/forum"); // Redirect to dashboard or home page
-      } else {
-        setError("Invalid username or password.");
+      if (!user) {
+        setError("Username does not exist");
+        return;
       }
+
+      if (user.password !== credentials.password) {
+        setError("Incorrect password");
+        return;
+      }
+
+      login(user); 
+
+
+      navigate("/profile");
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Login error:", error);
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -38,7 +50,7 @@ const Login = () => {
         <h2>Welcome Back</h2>
         <p>Login to continue to HerHaven</p>
         {error && <p className="error">{error}</p>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleLogin}>
           <input
             type="text"
             name="username"
