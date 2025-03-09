@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background: rgb(241, 202, 236);
+    background: #ffe4e6;
     padding: 20px;
   }
   
@@ -145,4 +145,163 @@
   font-size: 1em;
   color: #333;
   cursor: pointer;
+}
+
+/* Profile Container */
+.profile-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffe4e6;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+  padding: 3px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+/* Profile Details */
+.profile-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.profile-container p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.profile-container p strong {
+  color: #444;
+}
+
+/* Interests */
+.profile-container .interests {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.profile-container .interests span {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Edit Profile Button */
+.profile-container button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.profile-container button:hover {
+  background: #ad1457;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-container h2 {
+    font-size: 22px;
+  }
+
+  .profile-container p {
+    font-size: 14px;
+  }
+
+  .profile-container .interests span {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+.edit-profile-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background:rgb(241, 202, 236);
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+input, textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 80px;
+}
+
+.save-btn {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  background: #2c3e50;;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #ad1457;
 }
