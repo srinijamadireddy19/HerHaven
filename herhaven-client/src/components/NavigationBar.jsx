@@ -1,6 +1,10 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 import { useAuth } from '../context/AuthContext';
+<<<<<<< HEAD
+=======
+
+>>>>>>> a7a5ac24d79e247fd1326e8fd049e3b6ab827e35
 function NavigationBar() {
   const {state, logout} = useAuth();
   return (
