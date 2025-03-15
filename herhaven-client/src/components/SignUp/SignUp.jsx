@@ -45,10 +45,29 @@ const SignUp = () => {
     const nextStep = () => setStep(step + 1);
     const prevStep = () => setStep(step - 1);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      navigate("/login");
-      };
+      
+      // Save data to JSON Server
+      try {
+          const response = await fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify(formData)
+          });
+
+          if (response.ok) {
+              console.log("User registered successfully!");
+              navigate("/login");  // Redirect to login page
+          } else {
+              console.error("Failed to register user.");
+          }
+      } catch (error) {
+          console.error("Error:", error);
+      }
+  };
 
     const renderStep = () => {
         switch (step) {
