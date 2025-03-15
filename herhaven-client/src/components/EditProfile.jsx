@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import '../styles/Profile.css'
 
 const EditProfile = () => {
   const { state, setUser } = useAuth();
@@ -9,7 +10,6 @@ const EditProfile = () => {
   const [formData, setFormData] = useState(user || {});
   const navigate = useNavigate();
 
-  // 🔹 Ensure user is logged in before showing the page
   useEffect(() => {
     if (!user) navigate("/login");
   }, [user, navigate]);
@@ -29,7 +29,7 @@ const EditProfile = () => {
     }
   };
 
-  if (!user) return null; // Prevent rendering if user is null
+  if (!user) return null; 
 
   return (
     <div className="edit-profile-container">

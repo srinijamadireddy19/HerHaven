@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import avatar from '../assets/avatar.png';
+import '../styles/Profile.css'
 
 import axios from "axios";
 
@@ -31,17 +32,51 @@ function Profile() {
   }
 
   return (
-    <div className="profile-container">
-      <h2>Profile</h2>
-      <img src={profile.profilePicture || "default-avatar.png"} alt="Profile" className="profile-pic" />
-      <p><strong>Full Name:</strong> {profile.fullName}</p>
-      <p><strong>Username:</strong> {profile.username}</p>
-      <p><strong>Email:</strong> {profile.email}</p>
-      <p><strong>Bio:</strong> {profile.bio || "No bio provided"}</p>
-      <p><strong>Location:</strong> {profile.location || "Not specified"}</p>
-      <button onClick={() => navigate("/edit-profile")}>Edit Profile</button>
+    <div className="profile-wrapper">
+      <div className="profile-header">
+        <h2>Profile</h2>
+        <button className="edit-btn" onClick={() => navigate("/edit-profile")}>
+          Edit Profile
+        </button>
+      </div>
+      <div className="profile-details">
+        <img src={profile.profilePicture || avatar} alt="Profile" className="profile-pic" />
+        <div className="profile-info">
+          <div className="profile-col">
+            <p><strong>Full Name:</strong> {profile.fullName || "Not specified"}</p>
+            <p><strong>Username:</strong> {profile.username || "Not specified"}</p>
+            <p><strong>Display Name:</strong> {profile.displayName || "Not specified"}</p>
+            <p><strong>Email:</strong> {profile.email || "Not specified"}</p>
+            <p><strong>Location:</strong> {profile.location || "Not specified"}</p>
+            <p><strong>Date of Birth:</strong> {profile.dob || "Not specified"}</p>
+          </div>
+          <div className="profile-col">
+            <p><strong>Bio:</strong> {profile.bio || "No bio provided"}</p>
+            <p><strong>Interests:</strong> {profile.interests?.length > 0 ? profile.interests.join(", ") : "No interests specified"}</p>
+            <p><strong>Role:</strong> {profile.role || "Not specified"}</p>
+            <p><strong>Phone Number:</strong> {profile.phoneNumber || "Not specified"}</p>
+            <p><strong>Terms Agreement:</strong> {profile.agreeTerms ? "Agreed" : "Not agreed"}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* User's Posts Section *
+      <div className="user-posts">
+        <h3>User's Posts</h3>
+        {posts.length > 0 ? (
+          posts.map((post, index) => (
+            <div key={index} className="post-card">
+              <h4>{post.title}</h4>
+              <p>{post.content}</p>
+            </div>
+          ))
+        ) : (
+          <p>No posts yet.</p>
+        )}
+      </div>*/}
     </div>
   );
-}
+};
+
 
 export default Profile;
