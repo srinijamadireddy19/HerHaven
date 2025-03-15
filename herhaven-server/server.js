@@ -5,7 +5,7 @@ const middlewares = jsonServer.defaults();
 
 const cors = require("cors");
 server.use(cors());
-server.use(middleware);
+server.use(middlewares);
 server.use(router);
 
 server.listen(3000, () => {
