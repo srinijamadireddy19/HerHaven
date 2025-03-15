@@ -17,8 +17,21 @@
       "role": "",
       "phoneNumber": "",
       "agreeTerms": true,
-      "displayName": "vennilaa"
-
+      "displayName": "vennila"
+    }
+  ],
+  "posts": [
+    {
+      "id": "2",
+      "title": "React Tips and Tricks",
+      "content": "Here are some useful tips to improve your React development experience.",
+      "date": "2025-03-03T12:30:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Need Help with Redux?",
+      "content": "I'm facing an issue with state updates in Redux. Can anyone help?",
+      "date": "2025-03-05T15:45:00Z"
     }
   ]
 }

@@ -10,6 +10,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { AuthProvider } from "../context/AuthContext"; 
 import Profile from "../pages/Profile";
 import EditProfile from "../components/EditProfile";
+import Post from "../pages/Post";
 
 function AppRouter() {
     return (
@@ -20,6 +21,7 @@ function AppRouter() {
                     <Route element={<MainLayout />}>
                         <Route index element={<Home />} />
                         <Route path="/forum" element={<Forum />} />
+                        <Route path="/post" element={<Post />} />
                         <Route path="/profile" element={
                             <ProtectedRoute> 
                                  <Profile/>
