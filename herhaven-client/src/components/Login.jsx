@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import { BASE_URL } from "../config";
 
 
 
@@ -21,7 +22,7 @@ const Login = () => {
 
     try {
       const userResponse = await axios.get(
-        `http://localhost:3000/users?username=${credentials.username}`
+        `${BASE_URL}/users?username=${credentials.username}`
       );
       const user = userResponse.data[0];
 

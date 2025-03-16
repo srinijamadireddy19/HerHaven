@@ -5,6 +5,7 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../config';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -50,7 +51,7 @@ const SignUp = () => {
       
       // Save data to JSON Server
       try {
-          const response = await fetch("http://localhost:5000/users", {
+          const response = await fetch(`${BASE_URL}/users`, {
               method: "POST",
               headers: {
                   "Content-Type": "application/json"
@@ -60,7 +61,7 @@ const SignUp = () => {
 
           if (response.ok) {
               console.log("User registered successfully!");
-              navigate("/login");  // Redirect to login page
+              navigate("/login");  
           } else {
               console.error("Failed to register user.");
           }

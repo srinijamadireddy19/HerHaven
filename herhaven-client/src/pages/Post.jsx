@@ -3,6 +3,7 @@ import axios from "axios";
 import PostList from "../components/PostList";
 import NewPostButton from "../components/NewPostButton";
 import "../styles/Post.css";
+import { BASE_URL } from "../config";
 
 const Post = () => {
   const [posts, setPosts] = useState([]);
@@ -11,7 +12,7 @@ const Post = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/posts"); // Replace with API URL
+        const response = await axios.get(`${BASE_URL}/posts`); 
         setPosts(response.data);
         setLoading(false);
       } catch (error) {

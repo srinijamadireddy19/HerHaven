@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import avatar from '../assets/avatar.png';
 import '../styles/Profile.css'
+import { BASE_URL } from "../config";
 
 import axios from "axios";
 
@@ -19,7 +20,7 @@ function Profile() {
       return;
     }
 
-    axios.get(`http://localhost:3000/users/${user.id}`)
+    axios.get(`${BASE_URL}/users/${user.id}`)
       .then((response) => {
         console.log("Profile Data:", response.data); // Debugging log
         setProfile(response.data);
