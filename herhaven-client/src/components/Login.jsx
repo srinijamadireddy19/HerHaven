@@ -4,8 +4,6 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { BASE_URL } from "../config";
 
-
-
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();

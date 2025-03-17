@@ -39,6 +39,7 @@
   justify-content: space-around; 
   margin-right: 50px;
   padding: 0;
+  bottom: 0;
 }
 
 .nav-options li {
