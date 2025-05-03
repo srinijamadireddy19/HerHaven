@@ -6,7 +6,7 @@ const NewPostButton = () => {
   const navigate = useNavigate();
 
   const handleNewPost = () => {
-    navigate("/create-post");
+    navigate("/new-post");
   };
 
   return (

@@ -33,14 +33,23 @@ const PostCard = ({ post, onDelete }) => {
 
   return (
     <div className="post-card">
-      <div className="post-info" onClick={handlePostClick}>
-        <h3>{post.title}</h3>
-        <p>{post.content.substring(0, 100)}...</p>
-        <span className="date">Posted {getRelativeTime(post.date)}</span>
+      <div className="post-content">
+        <p>{post.content}</p>
+        {post.tags && (
+          <div className="tags">
+            {post.tags.map((tag, index) => (
+              <span key={index} className="tag">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-      <button onClick={handleDelete} className="delete-btn">
-        🗑️ Delete
-      </button>
+      <div className="post-actions">
+        <button className="delete-btn" onClick={() => onDelete(post.id)}>
+          Delete Post
+        </button>
+      </div>
     </div>
   );
 };

@@ -3,13 +3,14 @@
   min-height: 100vh; 
 }
 .auth-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background: #ffe4e6;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content */
+  gap: 20px; /* Add spacing */
+  background: #ffe4e6;
+  padding: 20px;
+}
   
   .auth-header {
     text-align: center;
@@ -37,23 +38,25 @@
   
   .auth-form {
     background-color: rgb(241, 202, 236);
-    padding: 30px 40px;
+    padding: 30px 5%; /* Adjust padding for smaller screens */
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 90%;
   }
+  
 
-.signup-container {
-  background-color: #ffe4e6;
-  padding: 30px;
-  width: 500px;
-  margin: 50px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  height: 420px;
-}
+  .signup-container {
+    background-color: #ffe4e6;
+    padding: 30px;
+    max-width: 100%; 
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: auto;
+  }
 
 .signup-container h1 {
   color: #2c3e50;
@@ -82,12 +85,15 @@
 .signup-container textarea,
 .signup-container select {
   width: 100%;
+  max-width: 100%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1em;
+  box-sizing: border-box; /* Prevents overflowing */
 }
+
 
 .progress-bar {
   width: 100%;
@@ -147,3 +153,30 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 15px;
+  }
+
+  .signup-container {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .signup-container h1 {
+    font-size: 1.5em;
+  }
+
+  .signup-container p {
+    font-size: 1em;
+  }
+
+  .signup-container button {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .checkbox-container {
+    flex-direction: column;
+  }
+}

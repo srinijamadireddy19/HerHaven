@@ -9,7 +9,7 @@
       "confirmPassword": "123",
       "profilePicture": null,
       "bio": "",
-      "location": "hyd",
+      "location": "hyderbad",
       "dob": "",
       "interests": [
         "Career Development"
@@ -18,20 +18,36 @@
       "phoneNumber": "",
       "agreeTerms": true,
       "displayName": "vennila"
+    },
+    {
+      "id": "471b",
+      "fullName": "mamatha",
+      "username": "mamatha",
+      "email": "mamathavennila@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "profilePicture": {},
+      "bio": "i am a student",
+      "location": "india",
+      "dob": "2025-04-01",
+      "interests": [
+        "Entrepreneurship"
+      ],
+      "role": "General Member",
+      "phoneNumber": "",
+      "agreeTerms": true
     }
   ],
   "posts": [
     {
-      "id": "2",
-      "title": "React Tips and Tricks",
-      "content": "Here are some useful tips to improve your React development experience.",
-      "date": "2025-03-03T12:30:00Z"
+      "id": "7614",
+      "content": "asdfg",
+      "tags": "qwe"
     },
     {
-      "id": "3",
-      "title": "Need Help with Redux?",
-      "content": "I'm facing an issue with state updates in Redux. Can anyone help?",
-      "date": "2025-03-05T15:45:00Z"
+      "id": "d842",
+      "content": "new post",
+      "tags": "mindset"
     }
   ]
 }

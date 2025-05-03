@@ -151,6 +151,22 @@ textarea:focus {
   background-color: #34495e;
 }
 
+.emergency-btn {
+  background-color: #dc2626; /* red-600 */
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.emergency-btn:hover {
+  background-color: #b91c1c; /* red-700 */
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .edit-profile-container {

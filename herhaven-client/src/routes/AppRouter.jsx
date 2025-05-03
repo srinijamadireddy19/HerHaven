@@ -11,6 +11,8 @@ import { AuthProvider } from "../context/AuthContext";
 import Profile from "../pages/Profile";
 import EditProfile from "../components/EditProfile";
 import Post from "../pages/Post";
+import NewPost from "../pages/NewPost";
+import PostDetail from "../components/PostDetail";
 
 function AppRouter() {
     return (
@@ -22,6 +24,8 @@ function AppRouter() {
                         <Route index element={<Home />} />
                         <Route path="/forum" element={<Forum />} />
                         <Route path="/post" element={<Post />} />
+                        <Route path="/post/:id" element={<PostDetail />} />
+                        <Route path="/new-post" element={<NewPost />} />
                         <Route path="/profile" element={
                             <ProtectedRoute> 
                                  <Profile/>
